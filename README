@@ -18,9 +18,10 @@ You don't have a deadline to finish it but keep in mind we will be evaluating ho
 
 Remember that be able to run your project locally or access a demo page is a BIG bonus point.
 
-## Frontend exercise: create a user interface for Todo List Web API
+## Frontend exercise:
 
-Implement a UI against the CRUD, you can use https://getbootstrap.com or any other.
+- create an user interface for Todo List Web API
+  Implement a UI against the CRUD, you can use https://getbootstrap.com or any other.
 
 #### BONUS
 
