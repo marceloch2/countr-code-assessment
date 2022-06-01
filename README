@@ -9,17 +9,18 @@ You don't have a deadline to finish it but keep in mind we will be evaluating ho
 - Please put your code on a Git host like Github/Gitlab/Bitbucket etc.
 - Please provide clear steps on how to run your application in a README.md.
 - Use a package manager (npm/yarn/pip/poetry/pipenv/composer etc...) and do not commit/upload your third party dependencies.
-- Write some tests
+- Write some tests for the back-end and front-end, you don't need to cover the entire code base, decide what is more important to test.
 
 ## Backend exercise: Implement Todo List Web API
 
-Implement the API specified on the bottom of the page.
-Persist your data using the database of your choice.
+- Implement the TODO LIST API CRUD, pay attention to the API status code return.
+- Persist your data using the database of your choice.
+
 Remember that be able to run your project locally or access a demo page is a BIG bonus point.
 
 ## Frontend exercise: create a user interface for Todo List Web API
 
-Implement a UI against the API specified at the bottom of the page.
+Implement a UI against the CRUD, you can use https://getbootstrap.com or any other.
 
 #### BONUS
 
@@ -31,17 +32,3 @@ Implement a UI against the API specified at the bottom of the page.
 ###### Frontend
 
 - Add authentication to the frontend.
-
-## Web API specification
-
-| method | uri                     | description                            | request body                                                                                                                                      | response body                                                                                       | success http status code |
-| ------ | ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------ |
-| POST   | /list                   | Add a new list                         | `{"name": "the name of your list"}`                                                                                                               | `{"data": {"id": 0}}`                                                                               | 201                      |
-| GET    | /list/{listId}          | Get a list by id                       | N/A                                                                                                                                               | `{"data": {"name": "Grocery List", "createdAt": "2021-06-28T12:35:12.025Z", "items": []}}`          | 200                      |
-| GET    | /list                   | Get all lists (think about pagination) | N/A                                                                                                                                               | `{"data": [{"id": 0, "name": "Grocery List"}, {"id": 1, "name": "Another List"}]}`                  | 200                      |
-| PATCH  | /list/{listId}          | Update list details                    | `{"name": "some new name of your list"}`                                                                                                          | `{"data": {"name": "Grocery Shopping List", "createdAt": "2021-06-28T12:35:12.025Z", "items": []}}` | 200                      |
-| DELETE | /list/{listId}          | Delete list                            | N/A                                                                                                                                               | `{}`                                                                                                | 200                      |
-| POST   | /list/{listId}          | Add new item to list                   | `{"name": "the name of your item"}`                                                                                                               | `{"data": {"id": 0, "name": "Buy Apples", "completed": false}}`                                     | 201                      |
-| GET    | /list/{listId}/{itemId} | Get single item                        | N/A                                                                                                                                               | `{"data": {"id": 0, "name": "Buy Apples", "completed": false}}`                                     | 200                      |
-| PATCH  | /list/{listId}/{itemId} | Update item details                    | `{"name": "the name of your item", "completed" :true}` Fields `name` and `completed` are both optional but at least one of them has to be present | `{"data": {"id": 0, "name": "Buy Apple", "completed": true}}`                                       | 200                      |
-| DELETE | /list/{listId}/{itemId} | Delete item                            | N/A                                                                                                                                               | `{}`                                                                                                | 200                      |
